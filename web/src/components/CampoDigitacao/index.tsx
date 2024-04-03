@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const Campo = styled.input`
 background: #F0F0F0;
 margin: 1em 0;
@@ -18,6 +19,11 @@ line-height: 19px;
 color: var(--azul-escuro);
 `
 
+const Container = styled.div`
+width: 100%;
+`
+
+
 interface Props {
   valor: string,
   tipo: string,
@@ -28,7 +34,7 @@ interface Props {
 
 export default function CampoDigitacao({ valor, tipo, placeholder, onChange, label } : Props) {
   return (
-    <div>
+    <Container>
       <Rotulo>{label}</Rotulo>
     <Campo
     type={tipo}
@@ -37,6 +43,6 @@ export default function CampoDigitacao({ valor, tipo, placeholder, onChange, lab
     onChange={(e) => onChange(e.target.value)}
     required
     />
-    </div>
+    </Container>
   )
 }
